@@ -54,7 +54,7 @@ function DeselectBuildings() {
     var first = FirstNonBuildingEntityFromSelection(selectedEntities)
     GameUI.SelectUnit(first, false); // Overrides the selection group
 
-    for (var unit of selectedEntities) {
+    for (var unit in selectedEntities) {
         skip = true; // Makes it skip an update
         if (!IsCustomBuilding(unit) && unit != first){
             GameUI.SelectUnit(unit, true);
@@ -103,7 +103,7 @@ function SelectOnlyBuildings() {
     var first = FirstBuildingEntityFromSelection(selectedEntities)
     GameUI.SelectUnit(first, false); // Overrides the selection group
 
-    for (var unit of selectedEntities) {
+    for (var unit in selectedEntities) {
         skip = true; // Makes it skip an update
         if (IsCustomBuilding(unit) && unit != first){
             GameUI.SelectUnit(unit, true);
